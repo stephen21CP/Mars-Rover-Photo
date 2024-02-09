@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Travel Record</title>
+</head>
+<body>
+    <h1>View Travel Record</h1>
+    <h3>Program by Xiangwu Dai</h3>
+    <table>
+        <table border="1">
+        <tr>
+            <th>Attribute</th>
+            <th>Value</th>
+        </tr>
+        <tr>
+            <td>Ref Number:</td>
+            <td>{{ record.ref_number }}</td>
+        </tr>
+        <tr>
+            <td>Disclosure Group:</td>
+            <td>{{ record.disclosure_group }}</td>
+        </tr>
+        <tr>
+            <td>Title (EN):</td>
+            <td>{{ record.title_en }}</td>
+        </tr>
+        <tr>
+            <td>Title (FR):</td>
+            <td>{{ record.title_fr }}</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td>{{ record.name }}</td>
+        </tr>
+        <tr>
+            <td>Purpose (EN):</td>
+            <td>{{ record.purpose_en }}</td>
+        </tr>
+        <tr>
+            <td>Purpose (FR):</td>
+            <td>{{ record.purpose_fr }}</td>
+        </tr>
+        <tr>
+            <td>Start Date:</td>
+            <td>{{ record.start_date }}</td>
+        </tr>
+        <tr>
+            <td>End Date:</td>
+            <td>{{ record.end_date }}</td>
+        </tr>
+        <tr>
+            <td>Destination (EN):</td>
+            <td>{{ record.destination_en }}</td>
+        </tr>
+        <tr>
+            <td>Destination (FR):</td>
+            <td>{{ record.destination_fr }}</td>
+        </tr>
+        <tr>
+            <td>Airfare:</td>
+            <td>{{ record.airfare }}</td>
+        </tr>
+        <tr>
+            <td>Other Transport:</td>
+            <td>{{ record.other_transport }}</td>
+        </tr>
+        <tr>
+            <td>Lodging:</td>
+            <td>{{ record.lodging }}</td>
+        </tr>
+        <tr>
+            <td>Meals:</td>
+            <td>{{ record.meals }}</td>
+        </tr>
+        <tr>
+            <td>Other Expenses:</td>
+            <td>{{ record.other_expenses }}</td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td>{{ record.total }}</td>
+        </tr>
+        <tr>
+            <td>Additional Comments (EN):</td>
+            <td>{{ record.additional_comments_en }}</td>
+        </tr>
+        <tr>
+            <td>Additional Comments (FR):</td>
+            <td>{{ record.additional_comments_fr }}</td>
+        </tr>
+        <tr>
+            <td>Owner Org:</td>
+            <td>{{ record.owner_org }}</td>
+        </tr>
+        <tr>
+            <td>Owner Org Title:</td>
+            <td>{{ record.owner_org_title }}</td>
+        </tr>
+    </table>
+
+    <a href="{{ url_for('list_records') }}">Back to List</a>
+
+</body>
+</html>

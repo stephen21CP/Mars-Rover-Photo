@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List of Travel Records</title>
+    <style>
+        /* Style to align elements */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Container to ensure consistent width */
+        .main-container {
+            max-width: 1200px; /* Adjust the value as needed */
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <h1>List of Travel Records</h1>
+        <h3>Program by Xiangwu Dai</h3>
+
+        <div class="header-container">
+            <!-- Add New Record link (left-aligned) -->
+            <a href="{{ url_for('add_record') }}">Add New Record</a>
+
+            <!-- Search form (right-aligned) -->
+            <form action="{{ url_for('search_records') }}" method="get">
+                <label for="search">Search:</label>
+                <input type="text" id="search" name="search">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+
+        <br>  
+        <br>   
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Ref Number</th>
+                    <th>Disclosure Group</th>
+                    <th>Title (EN)</th>
+                    <th>Name</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                <tr>
+                    <td>{{ record.ref_number }}</td>
+                    <td>{{ record.disclosure_group }}</td>
+                    <td>{{ record.title_en }}</td>
+                    <td>{{ record.name }}</td>
+                    <td>{{ record.start_date }}</td>
+                    <td>{{ record.end_date }}</td>
+                    <td>
+                        <a href="{{ url_for('view_record', record_id=record.ref_number) }}">View</a>
+                        <a href="{{ url_for('edit_record', record_id=record.ref_number) }}">Edit</a>
+                        <a href="{{ url_for('delete_record', record_id=record.ref_number) }}">Delete</a>                    
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br> 
+        <a href="{{ url_for('add_record') }}">Add New Record</a>
+    </div>
+</body>
+</html>

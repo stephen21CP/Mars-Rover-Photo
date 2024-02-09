@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Travel Record</title>
+</head>
+<body>
+    <h1>Edit Travel Record</h1>
+    <h3>Program by Xiangwu Dai</h3>
+
+    <form method="post">
+        <label for="ref_number">Ref Number:</label>
+        <input type="text" name="ref_number" id="ref_number" value="{{ record.ref_number }}" required><br>
+
+        <label for="disclosure_group">Disclosure Group:</label>
+        <input type="text" name="disclosure_group" id="disclosure_group" value="{{ record.disclosure_group }}" ><br>
+
+        <label for="title_en">Title (EN):</label>
+        <input type="text" name="title_en" id="title_en" value="{{ record.title_en }}" ><br>
+
+        <label for="title_fr">Title (FR):</label>
+        <input type="text" name="title_fr" id="title_fr" value="{{ record.title_fr }}" ><br>
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="{{ record.name }}" ><br>
+
+        <label for="purpose_en">Purpose (EN):</label>
+        <input type="text" name="purpose_en" id="purpose_en" value="{{ record.purpose_en }}" ><br>
+
+        <label for="purpose_fr">Purpose (FR):</label>
+        <input type="text" name="purpose_fr" id="purpose_fr" value="{{ record.purpose_fr }}" ><br>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" value="{{ record.start_date }}" ><br>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" value="{{ record.end_date }}" ><br>
+
+        <label for="destination_en">Destination (EN):</label>
+        <input type="text" name="destination_en" id="destination_en" value="{{ record.destination_en }}" ><br>
+
+        <label for="destination_fr">Destination (FR):</label>
+        <input type="text" name="destination_fr" id="destination_fr" value="{{ record.destination_fr }}" ><br>
+
+        <label for="airfare">Airfare:</label>
+        <input type="text" name="airfare" id="airfare" value="{{ record.airfare }}" ><br>
+
+        <label for="other_transport">Other Transport:</label>
+        <input type="text" name="other_transport" id="other_transport" value="{{ record.other_transport }}" ><br>
+
+        <label for="lodging">Lodging:</label>
+        <input type="text" name="lodging" id="lodging" value="{{ record.lodging }}" ><br>
+
+        <label for="meals">Meals:</label>
+        <input type="text" name="meals" id="meals" value="{{ record.meals }}" ><br>
+
+        <label for="other_expenses">Other Expenses:</label>
+        <input type="text" name="other_expenses" id="other_expenses" value="{{ record.other_expenses }}" ><br>
+
+        <label for="total">Total:</label>
+        <input type="text" name="total" id="total" value="{{ record.total }}" ><br>
+
+        <label for="additional_comments_en">Additional Comments (EN):</label>
+        <textarea name="additional_comments_en" id="additional_comments_en" >{{ record.additional_comments_en }}</textarea><br>
+
+        <label for="additional_comments_fr">Additional Comments (FR):</label>
+        <textarea name="additional_comments_fr" id="additional_comments_fr" >{{ record.additional_comments_fr }}</textarea><br>
+
+        <label for="owner_org">Owner Organization:</label>
+        <input type="text" name="owner_org" id="owner_org" value="{{ record.owner_org }}" ><br>
+
+        <label for="owner_org_title">Owner Organization Title:</label>
+        <input type="text" name="owner_org_title" id="owner_org_title" value="{{ record.owner_org_title }}" ><br>
+
+        <input type="submit" value="Update">
+    </form>
+
+    <a href="{{ url_for('list_records') }}">Back to List</a>
+</body>
+</html>
